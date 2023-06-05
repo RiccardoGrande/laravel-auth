@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['title', 'content', 'cover_image', 'slug'];
+
+    public static function generateSlug($title)
+    {
+        return Str::slug($title, '-');
+    }
 }
