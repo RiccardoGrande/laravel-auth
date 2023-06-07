@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     // responds to url /admin
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard'); // admin.dashboard
-    Route::resource('posts', PostController::class); // admin.dashboard
+    Route::resource('projects', ProjectController::class); // admin.dashboard
 
 });
 
