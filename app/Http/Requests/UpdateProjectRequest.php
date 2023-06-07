@@ -24,7 +24,10 @@ class UpdateProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => ['required', 'unique:posts', 'max:150'],
+            'url_project' => ['nullable', 'max:255'],
+            'content' => ['nullable'],
+            'category_id' => ['exists:categories,id'],
         ];
     }
 }
